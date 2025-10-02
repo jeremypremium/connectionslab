@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Dance Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+</head>
+<body>
+    <section id = "heading">
+        <h1> Just Dance </h1>
+        </p> This is a random dance generator meant to get you out of your head and into your body in just three easy steps.</p>
+    </section>
+    
+    <div class = "container">
+        <section id = "music-container">
+            <p> Select a song. </p>
+            <section id="spotify">
+                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6iaFsjAKiSx80mFVnxa431?utm_source=generator" width="65%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </section>
+        </section>
+
+        <section id="photo-container">
+         <p> Select a vibe. </p>
+        <!-- Slider code; got the HTML from https://swiperjs.com/get-started and watched this tutorial https://www.youtube.com/watch?v=aRE2Zge1rUI-->
+
+        <!-- Slider main container -->
+            <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"><img src="dance-1.png" alt="Missy Elliot and Alyson Stoner dancing in 'Work It' music video"></div>
+                <div class="swiper-slide"><img src="dance-2.png" alt="photo of Soul Train line"></div>
+                <div class="swiper-slide"><img src="dance-3.png" alt="Julia Stiles dancing in 'Save the Last Dance'"></div>
+                <div class="swiper-slide"><img src="dance-4.png" alt="photo of Channing Tatum, Matt Bomer, and Joe Manganiello dancing shirtless in 'Magic Mike'"></div>
+                <div class="swiper-slide"><img src="dance-5.png" alt="Gabrielle Union and the Clovers performing cheer in 'Bring It On'"></div>
+                <div class="swiper-slide"><img src="dance-6.png" alt="Danielle, Laura, and Megan from Katseye with dancers in Gap ad"></div>
+                ...
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+            </div>
+        </section>
+ 
+        <section id="dance-container">
+            <button id = "button"> Let's Dance!! </button>
+            <div id = "instructions-container">
+                <section class = "instructions" id ="upperbody-container">
+                    <p id = "random-upperbody"> 1. Upper Body </p>
+                </section>
+
+                <section class = "instructions" id ="middlebody-container">
+                    <p id = "random-middlebody"> 2. Mid Body </p>
+                </section>
+
+                <section class = "instructions" id ="lowerbody-container">
+                    <p id = "random-lowerbody"> 3. Lower Body</p>
+                </section>
+            </div>
+        </section>
+    </div>
+
+    <script src = "script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <script>
+        // Initialize Swiper - got this from https://swiperjs.com/get-started
+        const swiper = new Swiper('.swiper', {
+        
+            // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        // Claude helped me with this. Previously, the edge of the previous photo would show up
+        slidesPerView: 1,
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        });
+
+    </script>
+</body>
+</html>
